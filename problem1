@@ -1,0 +1,39 @@
+//A company has revamped the health insurance policy for all its insured employees and has increased their health cover by 20%. 
+In order to provide them this facility, the human resource department needs to collect the data of all insured employees and prepare a unique list of their employee 
+ids.​ Write a program to help the HR manager to create a unique list of employee ids to avoid duplication.​​
+
+
+import java.util.Scanner;
+
+public class FindUniqueArray {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter elements");
+        int[] salesDepartmentEmpIds = new int[5];
+        for (int i=0;i<salesDepartmentEmpIds.length;i++)
+        {
+            salesDepartmentEmpIds[i]= sc.nextInt();
+        }
+        boolean b=uniquArray(salesDepartmentEmpIds);
+        System.out.print(b);
+    }
+
+    private static boolean uniquArray(int[] salesDepartmentEmpIds) {
+        //boolean b[]=new boolean[salesDepartmentEmpIds.length];
+        for (int i=0;i<salesDepartmentEmpIds.length;i++)
+        {int count =0;
+            for(int j=i+1;j<salesDepartmentEmpIds.length;j++)
+            {
+                if(salesDepartmentEmpIds[i]==salesDepartmentEmpIds[j])
+                    count++;
+                break;
+            }
+            if(count==1)
+            {
+                return false;
+            }
+        }
+        return true;
+
+    }
+}
