@@ -1,0 +1,55 @@
+//Anne is using a calorie tracker app that helps her keep a record of all her physical activities and her daily intake of calories The calories burned by her doing some 
+of the common physical activities are:
+
+30 minutes of cycling burns around 300 calories
+30 minutes of swimming burns around 200 calories
+30 minutes of running burns around 500 calories
+Anne can lose one pound of weight for each 1000 calories burned. Her daily extra calorie intake tracked by the app is 100 Write a java program to calculate 
+the number of pounds Anne can lose in a month if she does each of the above mentioned activities once a week for 1 hour and chooses to do one activity per day.
+
+
+public class CalorieTracker
+{
+	public static final int CYCLING = 300;
+	public static final int SWIMMING = 200;
+	public static final int RUNNING = 500;
+		
+	public static void main(String[] args)
+	{
+		double cyclingTimeInMinutes = 30;
+		double swimmingTimeInMinutes = 30;
+		double runningTimeInMinutes = 30;
+		
+		double caloriesBurnedForCycling = 0.0175 
+					* CYCLING * weightInKilograms
+					* cyclingTimeInMinutes;
+		
+		double caloriesBurnedForSwimming = 0.0175 
+					* SWIMMING * weightInKilograms
+					* swimmingTimeInMinutes;
+		
+		double caloriesBurnedForRunning = 0.0175 
+					* RUNNING * weightInKilograms
+					* runningTimeInMinutes;
+		
+		double totalCaloriesBurned = caloriesBurnedForCycling 
+							+ caloriesBurnedForSwimming
+							+ caloriesBurnedForRunning;		
+		
+		System.out.println(
+				"Number of calories burned for Cycling:    " 
+				+ caloriesBurnedForCycling);
+
+		System.out.println(
+				"Number of calories burned for Swimming: " 
+				+ caloriesBurnedForSwimming);
+		
+		System.out.println(
+				"Number of calories burned for Running:   " 
+				+ caloriesBurnedForRunning);
+
+		System.out.println(
+			"\nTotal number of calories burned per minute: " 
+			+ totalCaloriesBurned);		
+	}
+}
